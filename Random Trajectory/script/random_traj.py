@@ -1,8 +1,7 @@
 import random
 import numpy as np
-from matplotlib import pyplot as plt
+import matplotlib.pyplot as plt
 from scipy.stats import norm
-import math
 
 """
 In this program, we generate and plot multiple random trajectories. 
@@ -18,47 +17,76 @@ The program provides a simple example of how to generate and plot random traject
 It can be extended and modified to suit different purposes, such as modeling natural processes or generating random data for testing purposes.
 """
 
-# define the list of possible movements: left or right
-jump = (-1, 1)
 
-# define the maximum number of steps for each trajectory
-max_step = 90000
+def generate_random_trajectories(num_trajectories, max_steps):
+    """
+    This function generates random trajectories by randomly choosing the direction of movement (left or right) at each step.
+    It returns a list of all the trajectories generated.
+    """
 
-# create a list for the y-axis
-steps = list(range(max_step))
+    # define the list of possible movements: left or right
+    movements = [-1, 1]
 
-# define the number of trajectories to generate
-n_trajs = 5
+    # create an empty list to hold all the trajectories
+    trajectories = []
 
-# create an empty list to hold all the trajectories
-trajs = []
+    # generate n_trajs random trajectories
+    for i in range(num_trajectories):
 
-# generate n_trajs random trajectories
-for i in range(n_trajs):
-    # initialize the position of the trajectory
-    x = 0
-    temp = []
-    # for each step, randomly choose a direction to move
-    for j in range(max_step):
-        # add the current position to the trajectory
-        temp.append(x)
-        
-        # randomly choose a direction to move
-        x += random.choice(jump)
-        
-    # add the completed trajectory to the list
-    trajs.append(temp)
+        # initialize the position of the trajectory
+        x = 0
 
-# create a new figure and axis for plotting
-fig = plt.figure()
-ax = fig.add_subplot(111)
-# set the x and y axis labels and title
-ax.set_xlabel('Step')
-ax.set_ylabel('Position')
-ax.set_title('Random trajectories')
-# plot each trajectory
-for el in trajs:
-    ax.plot(steps, el)
+        # all steps for each trajectories
+        trajectory = []
 
-# display the plot
-plt.show()
+        # for each step, randomly choose a direction to move
+        for j in range(max_steps):
+
+            # add the current position to the trajectory
+            trajectory.append(x)
+
+            # randomly choose a direction to move
+            x += random.choice(movements)
+
+        # add the completed trajectory to the list
+        trajectories.append(trajectory)
+
+    return trajectories
+
+
+def plot_trajectories(trajectories, max_steps):
+    """
+    This function plots the trajectories using Matplotlib.
+    """
+
+    # create a list for the y-axis
+    steps = np.arange(max_steps)
+    
+    # plots the trajectories using Matplotlib.
+    fig, ax = plt.subplots()
+    ax.set_xlabel('Step')
+    ax.set_ylabel('Position')
+    ax.set_title('Random Trajectories')
+    for traj in trajectories:
+        ax.plot(steps, traj)
+    plt.show()
+
+
+def main():
+    """
+    This is the main function that runs the program.
+    """
+
+    # define the number of trajectories to generate
+    num_trajectories = 5
+
+    # define the maximum number of steps for each trajectory
+    max_steps = 90000
+
+    # Calling the function generate_random_trajectories and plot_trajectories.
+    trajectories = generate_random_trajectories(num_trajectories, max_steps)
+    plot_trajectories(trajectories, max_steps)
+
+
+if __name__ == '__main__':
+    main()
