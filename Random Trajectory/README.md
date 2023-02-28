@@ -10,9 +10,9 @@ Five random trajectories will be generated and plotted.
 ### Dependencies
 The program requires the installation of the following Python libraries:
 
-numpy
-matplotlib
-scipy
+* numpy
+* matplotlib
+* scipy
 
 The libraries can be installed using pip, for example:
 
