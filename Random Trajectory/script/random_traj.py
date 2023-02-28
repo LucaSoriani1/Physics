@@ -18,12 +18,12 @@ It can be extended and modified to suit different purposes, such as modeling nat
 """
 
 
-def generate_random_trajectories(num_trajectories, max_steps):
+def generate_random_trajectories(NUM_TRAJECTORIES, MAX_STEP):
     """
     > The function generates a list of random trajectories, where each trajectory is a list of positions
     
-    :param num_trajectories: the number of trajectories to generate
-    :param max_steps: the maximum number of steps in each trajectory
+    :param NUM_TRAJECTORIES: the number of trajectories to generate
+    :param MAX_STEP: the maximum number of steps in each trajectory
     :return: A list of lists. Each list is a trajectory.
     """
 
@@ -34,7 +34,7 @@ def generate_random_trajectories(num_trajectories, max_steps):
     trajectories = []
 
     # generate n_trajs random trajectories
-    for i in range(num_trajectories):
+    for i in range(NUM_TRAJECTORIES):
 
         # initialize the position of the trajectory
         x = 0
@@ -43,7 +43,7 @@ def generate_random_trajectories(num_trajectories, max_steps):
         trajectory = []
 
         # for each step, randomly choose a direction to move
-        for j in range(max_steps):
+        for j in range(MAX_STEP):
 
             # add the current position to the trajectory
             trajectory.append(x)
@@ -57,16 +57,16 @@ def generate_random_trajectories(num_trajectories, max_steps):
     return trajectories
 
 
-def plot_trajectories(trajectories, max_steps):
+def plot_trajectories(trajectories, MAX_STEP):
     """
     It takes a list of trajectories and plots them using Matplotlib
     
     :param trajectories: a list of trajectories, where each trajectory is a list of positions
-    :param max_steps: the number of steps to take in each trajectory
+    :param MAX_STEP: the number of steps to take in each trajectory
     """
 
     # create a list for the y-axis
-    steps = np.arange(max_steps)
+    steps = np.arange(MAX_STEP)
     
     # plots the trajectories using Matplotlib.
     fig, ax = plt.subplots()
@@ -80,19 +80,19 @@ def plot_trajectories(trajectories, max_steps):
 
 def main():
     """
-    The function generate_random_trajectories takes in two arguments, num_trajectories and max_steps,
+    The function generate_random_trajectories takes in two arguments, NUM_TRAJECTORIES and MAX_STEP,
     and returns a list of trajectories
     """
 
     # define the number of trajectories to generate
-    num_trajectories = 5
+    NUM_TRAJECTORIES = 5
 
     # define the maximum number of steps for each trajectory
-    max_steps = 90000
+    MAX_STEP = 90000
 
     # Calling the function generate_random_trajectories and plot_trajectories.
-    trajectories = generate_random_trajectories(num_trajectories, max_steps)
-    plot_trajectories(trajectories, max_steps)
+    trajectories = generate_random_trajectories(NUM_TRAJECTORIES, MAX_STEP)
+    plot_trajectories(trajectories, MAX_STEP)
 
 
 if __name__ == '__main__':

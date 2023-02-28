@@ -19,5 +19,9 @@ The libraries can be installed using pip, for example:
 ```
 pip install -r requirements.txt
 ```
+
+
+The default values for NUM_TRAJECTORIES and MAX_STEP are 5 and 90000, respectively. You can change these values in the main function.
+
 ### Modifications and Contributions
 This program can be extended and modified to suit different purposes, such as modeling natural processes or generating random data for testing purposes. If you would like to contribute to the program or propose modifications, please send a pull request or contact the author.

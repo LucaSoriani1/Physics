@@ -25,5 +25,10 @@ The libraries can be installed using pip, for example:
 pip install -r requirements.txt
 ```
 
+To use the code, run the main function. The function simulate_walk takes two arguments, step and limit, and returns an array of the positions of the walk and the frequency of each position.
+
+The default values for STEP and LIMIT are 15 and 200000, respectively. You can change these values in the main function.
+
+
 ### Modifications and Contributions
 This program can be extended and modified to suit different purposes, such as modeling natural processes or generating random data for testing purposes. If you would like to contribute to the program or propose modifications, please send a pull request or contact the author.
