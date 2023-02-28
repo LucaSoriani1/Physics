@@ -1,4 +1,4 @@
-##### Random Trajectories
+# Random Trajectories
 This program generates and plots random trajectories. A random trajectory is a sequence of positions or events that occur randomly or in a random way. In this program, we generate random trajectories by randomly choosing the direction of movement (left or right) at each step. We then plot these trajectories using the Matplotlib library.
 
 ### Usage
@@ -15,8 +15,8 @@ The program requires the installation of the following Python libraries:
 * scipy
 
 The libraries can be installed using pip, for example:
-
+```
 pip install -r requirements.txt
-
+```
 ### Modifications and Contributions
 This program can be extended and modified to suit different purposes, such as modeling natural processes or generating random data for testing purposes. If you would like to contribute to the program or propose modifications, please send a pull request or contact the author.
