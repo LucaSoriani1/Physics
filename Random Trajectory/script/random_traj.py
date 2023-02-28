@@ -20,8 +20,11 @@ It can be extended and modified to suit different purposes, such as modeling nat
 
 def generate_random_trajectories(num_trajectories, max_steps):
     """
-    This function generates random trajectories by randomly choosing the direction of movement (left or right) at each step.
-    It returns a list of all the trajectories generated.
+    > The function generates a list of random trajectories, where each trajectory is a list of positions
+    
+    :param num_trajectories: the number of trajectories to generate
+    :param max_steps: the maximum number of steps in each trajectory
+    :return: A list of lists. Each list is a trajectory.
     """
 
     # define the list of possible movements: left or right
@@ -56,7 +59,10 @@ def generate_random_trajectories(num_trajectories, max_steps):
 
 def plot_trajectories(trajectories, max_steps):
     """
-    This function plots the trajectories using Matplotlib.
+    It takes a list of trajectories and plots them using Matplotlib
+    
+    :param trajectories: a list of trajectories, where each trajectory is a list of positions
+    :param max_steps: the number of steps to take in each trajectory
     """
 
     # create a list for the y-axis
@@ -74,7 +80,8 @@ def plot_trajectories(trajectories, max_steps):
 
 def main():
     """
-    This is the main function that runs the program.
+    The function generate_random_trajectories takes in two arguments, num_trajectories and max_steps,
+    and returns a list of trajectories
     """
 
     # define the number of trajectories to generate

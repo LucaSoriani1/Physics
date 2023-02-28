@@ -3,8 +3,9 @@ This program generates and plots random trajectories. A random trajectory is a s
 
 ### Usage
 To run the program, open the terminal and type the following command:
-
+```
 python random_trajectories.py
+```
 Five random trajectories will be generated and plotted.
 
 ### Dependencies
