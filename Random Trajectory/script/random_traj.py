@@ -4,6 +4,14 @@ import matplotlib.pyplot as plt
 from scipy.stats import norm
 
 """
+Random trajectories refer to paths or movements that are unpredictable or irregular. 
+They are characterized by a lack of a clear pattern or direction, 
+and they can be influenced by various random factors or events. 
+Random trajectories can be observed in various fields, such as physics, biology, finance
+and computer science, and they are often modeled using stochastic processes or probability distributions.
+Examples of random trajectories include the movements of particles in a gas,
+the growth patterns of bacterial colonies, the fluctuations in stock prices, or the behavior of users on a website.
+
 In this program, we generate and plot multiple random trajectories. 
 Random trajectories are sequences of positions or events that occur randomly or in a random way.
 In this program, we generate random trajectories by randomly choosing the direction of movement (left or right) at each step.
@@ -14,7 +22,6 @@ Next, we generate n_trajs random trajectories by randomly choosing a direction t
 Finally, we plot the trajectories using Matplotlib.
 
 The program provides a simple example of how to generate and plot random trajectories. 
-It can be extended and modified to suit different purposes, such as modeling natural processes or generating random data for testing purposes.
 """
 
 

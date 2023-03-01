@@ -1,5 +1,28 @@
 import math
 
+"""
+This script calculates the Fibonacci sequence up to a given length,
+then calculates the ratio between the last two numbers in the sequence
+and compares it with the golden ratio.
+
+The Fibonacci sequence is a mathematical sequence of numbers
+in which each number is the sum of the two preceding numbers.
+The sequence starts with 0 and 1, and goes as follows: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, ...
+
+The Fibonacci sequence is found in many natural phenomena,
+such as the arrangement of leaves on a stem, the spiral of shells, and the branching of trees.
+
+The golden ratio, also known as the divine proportion,
+is a mathematical ratio that is approximately equal to 1.61803398875.
+It is found in nature, art, and architecture, and is often associated with beauty and harmony.
+
+The relationship between the Fibonacci sequence and the golden ratio is that the ratio
+of any two consecutive numbers in the sequence approaches the golden ratio as the sequence goes to infinity.
+In other words, the larger the numbers in the sequence, the closer the ratio between them is to the golden ratio.
+"""
+
+
+
 # Defining a constant called GOLDEN_RATIO, which is the golden ratio.
 GOLDEN_RATIO = (1 + math.sqrt(5)) / 2
 

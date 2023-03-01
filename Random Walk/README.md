@@ -1,4 +1,7 @@
 # Random Walks
+
+The random walk is a mathematical model used to describe a system that randomly moves in different directions.The code serves as a tool to visualize and understand the properties of random walks, which have applications in various fields such as finance, physics, and biology. 
+
 This code simulates a random walk by generating a series of random steps, where each step can be either +1 or -1. After each step, the position of the system is accumulated. The resulting probability distribution of the positions is plotted using a histogram and compared to the expected distribution from a normal distribution.
 
 The simulate_walk function takes two arguments, step and limit, and returns an array of the positions of the walk and the frequency of each position.
