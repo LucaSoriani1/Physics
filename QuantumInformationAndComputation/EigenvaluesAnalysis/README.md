@@ -63,7 +63,7 @@ python matrix.py
 ```
 
 The program will prompt the user to enter the dimension of the matrix and how many cicles to do.
-###### Note: 3000x3000 in 30 cicles spent around 40 minutes to be done.
+##### Note: 3000x3000 in 30 cicles spent around 40 minutes to be done.
 
 
 ### Fortran90 code
