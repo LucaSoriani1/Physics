@@ -29,7 +29,7 @@ The simulation takes several parameters as input, such as the number of points i
 The simulation is performed by numerically solving the time-dependent Schrödinger equation using the split-operator method, and the results are plotted using matplotlib.
 
 ### Usage
-The code can be run from the command line by executing the main() function. The user can adjust the following parameters:
+The code can be run from the command line by executing the time_dependent_harmonic_oscillator() function. The user can adjust the following parameters:
 
 * min: the minimum value of the x-axis
 * max: the maximum value of x
@@ -68,3 +68,7 @@ You will find the original code in Fortran90. To run the .f90 script, you will n
 - Code Runner
 
 Moreover, you need to install the 'lapack' library and 'Gnuplot'(adding it to the PATH variable) in order to run it.
+
+### Modifications and Contributions
+
+This program can be extended and modified to suit different purposes, such as modeling natural processes or generating random data for testing purposes. If you would like to contribute to the program or propose modifications, please send a pull request or contact the author.

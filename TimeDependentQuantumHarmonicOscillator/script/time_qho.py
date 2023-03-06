@@ -18,7 +18,7 @@ def expected_time(times, it, cicles):
     return (((sum/it)*cicles)/60 - sum/60)
 
        
-def progress_bar(progress, total, times, label=None):
+def progress_bar(progress, total, times):
     """
     It prints a progress bar with a remaining time estimate
     
@@ -178,9 +178,8 @@ def plot(intspace, dx, T, dt, min, max, bintime, binspace, psi, dk, k_i, time_st
     
     # Getting the whole time of the computation
     total = end-start
-    
     # The above code is calculating the total time it took to run the code.
-    print(f"I spent {int(total/60)} minutes and {int((total - int(total/60))*60)} seconds to make the calculation")
+    print(f"I spent {int(total/60)} minutes and {int(total - int(total/60)*60)} seconds to make the calculation")
     
     # show the plot
     plt.show()

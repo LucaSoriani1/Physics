@@ -1,4 +1,5 @@
 import numpy as np
+from tabulate import tabulate
 
 """
 The Bose-Hubbard model is a theoretical model used in condensed matter physics
@@ -149,6 +150,9 @@ def print_details(gs_index, gs, delta):
         if round(gs[i], 3) != 0:
             occuped_state[states[i]] = gs[i]
     
+    table = []
+    for k,v in occuped_state.items():
+        table.append([k, round(v, 3)])
     ret = "\nEIGENVALUE FOR GROUND STATE: " + str(gs_index) + ',\n'
     ret += "GROUND STATE: "
     i=0
@@ -161,27 +165,16 @@ def print_details(gs_index, gs, delta):
             ret+= str(v)[:5] + k
         else:
             ret += str(v)[:6] + k
-    ret += ',\n\n'
-    i+=1
-    
-    header = "| State | Amplitude of probability |\n"
-    ret += "-"*(len(header)-1) + "\n"
-    ret += header
-    ret += "-"*(len(header)-1) + "\n"
-    for k,v in occuped_state.items():
-        ret += "|  " + k + " | "
-        if v>0:
-            ret += "           " + str(v)[:5] + "           |\n"
-        else:
-            ret += "         " + str(v)[:6] + "          |\n"
-
-    ret += "-"*(len(header)-1) + "\n"
-    footer = "Total probability: " + str(sum)
-    ret += " "*(len(header) - 1 - len(footer) - 1) + footer + "\n\n"
-    ret += "Delta of number of particles: " + str(delta) + "\n"
-    print(ret)
             
-        
+        i+=1
+    ret += ',\n\n'
+    
+    ret+=tabulate(table, headers=['State', 'Amplitude of Probability'])
+    
+    ret  += "\n\nTotal probability: " + str(sum)
+    
+    ret += "\n \nDelta of number of particles: " + str(delta) + "\n"
+    print(ret)
     
 
 def main():
