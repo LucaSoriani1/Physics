@@ -86,6 +86,15 @@ The libraries can be installed using pip, for example:
 ```
 pip install -r requirements.txt
 ```
+### Fortran90 code
+
+You will find the original code in Fortran90. To run the .f90 script, you will need a compiler, then some extension in Visual Studio code as:
+
+- C/C++
+- Modern Fortran
+- Code Runner
+
+Moreover, you need to install the 'lapack' library and 'Gnuplot'(adding it to the PATH variable) in order to run it.
 
 ### Modifications and Contributions
 
