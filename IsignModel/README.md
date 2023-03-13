@@ -16,7 +16,8 @@ The eigenvalues in the Ising model are distributed differently depending on the 
 
 The energy of the system is given by the sum of the interaction energies between the spins. In particular, each pair of neighboring spins contributes to the total energy of the system based on their interaction, which can be ferromagnetic or antiferromagnetic. In the first case, the spins tend to align parallelly, while in the second case they tend to align antiparallelly.
 
-The Ising model can be numerically solved using the Hamiltonian. Solving the Hamiltonian allows the calculation of system properties, such as magnetization and free energy.
+The Ising model can be numerically solved using the Hamiltonian. Solving the Hamiltonian allows the calculation of system properties, such as magnetization and free energy. Given a such Hamiltonian operator, the $j-$th particle contributes to that operator as $$
+\widehat{H}_j  = \lambda \left( \mathbb{1}_{2\times 2}^{(1)} \otimes \mathbb{1}_{2 \times 2}^{(2)} \otimes \ldots \otimes \sigma_z^{(j)} \otimes \ldots \otimes \mathbb{1}_{2\times 2}^{(N)}\right) + \left( \mathbb{1}_{2 \times 2}^{(1)} \otimes \mathbb{1}_{2\times 2}^{(2)} \otimes \ldots \otimes \sigma_x^{(j)} \otimes \sigma_{x}^{(j+1)} \otimes \ldots \otimes \mathbb{1}_{2\times 2}^{(N)}\right). $$
 
 This code numerically solves the Ising model by calculating the Hamiltonian of the system. The Hamiltonian is represented as a 2^N x 2^N matrix, where N is the number of particles, and is calculated separately for the interactions between the spins along the z-axis and along the x-axis. Subsequently, the eigenvalues and eigenvectors of the Hamiltonian matrix are calculated using the numpy.linalg.eigh function. The code also includes a progress bar to monitor the progress of the calculation and an estimate of the expected completion time.
 

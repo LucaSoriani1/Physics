@@ -18,7 +18,7 @@ In this discretization, eache component of the Hamiltonian can be approximated b
 $$
 H_ij = [(-\frac{m}{2 dx^2}) + \frac{m}{2} w^2 x_i^2] \delta_{ij} - \frac{m}{2 dx^2}  \delta_{i,j-1} - \frac{m}{2 dx^2} \delta_{i,j+1}
 $$
-where delta_ij is the Kronecker delta, which is equal to 1 if i = j and 0 otherwise.
+where $\delta_{ij}$ is the Kronecker delta, which is equal to 1 if i = j and 0 otherwise.
 
 This code simulates the time evolution of a quantum harmonic oscillator using a time-dependent Hamiltonian. The simulation is performed by numerically solving the time-dependent Schrödinger equation using the split-operator method and the discretization.
 

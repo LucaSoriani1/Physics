@@ -1,6 +1,6 @@
 # Random Complex Matrix & Adjoint
 
-The adjoint matrix, also known as the Hermitian conjugate or conjugate transpose, of a square matrix is obtained by taking the transpose of the matrix and then taking the complex conjugate of each element. In other words, if A is a matrix, then its adjoint matrix A† is given by (A†)ij = (A)ji\*.
+The adjoint matrix, also known as the Hermitian conjugate or conjugate transpose, of a square matrix is obtained by taking the transpose of the matrix and then taking the complex conjugate of each element. In other words, if $A$ is a matrix, then its adjoint matrix $A^{\dagger}$ is given by $$(A^{\dagger})_{ij} = (A)^{*}_{ji}.$$
 
 In quantum mechanics, the adjoint matrix plays a fundamental role as it is used to describe the complex conjugate of quantum states and operators. In particular, the adjoint matrix of an operator is used to describe the conjugate transpose of the operator, which is used to calculate the expectation value of an observable in quantum mechanics. The adjoint matrix is also used to calculate the probability of measuring a certain value of an observable in a quantum system. Therefore, the adjoint matrix is an important tool for studying the behavior of quantum systems and making predictions about their properties.
 
