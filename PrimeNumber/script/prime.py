@@ -88,7 +88,7 @@ def prime_numbers(count):
 #Main function
 def main():
     # Generate the first 10000 prime numbers
-    count = 40000
+    count = 10000
     start = time.time()
 
     primes = prime_numbers(count)

@@ -1,25 +1,25 @@
 # Quantum Harmonic Oscillator in 1D
-The code solves the eigenvalue problem of the 1D quantum harmonic oscillator, which is a theoretical model of a physical system consisting of a particle constrained to move along an axis with a harmonic potential. The system is described by the Hamiltonian:
-
+The quantum harmonic oscillator is a mathematical model that describes the behavior of a particle oscillating around an equilibrium point constrained to move along an axis with a harmonic potential. The system is described by the Hamiltonian:
 $$\hat{H} = \frac{\hat{p}^2}{2m} + \frac{1}{2}m\omega^2\hat{x}^2$$
+where $m$ is the mass of the particle and $\omega$ is the frequency of the harmonic motion. 
 
-where $\hat{p}$ and $\hat{x}$ are the momentum and position operators, respectively, $m$ is the mass of the particle, and $\omega$ is the frequency of the harmonic motion.
+The solution of the Schrödinger equation for the quantum harmonic oscillator is known and is given by the Hermite functions, which represent the stationary states of the oscillator. These states are quantized and their energy is given by the formula:
+$$\psi_n(x) = \frac{1}{\sqrt{2^n n!}} \left(\frac{m\omega}{\pi \hbar}\right)^{\frac{1}{4}} e^{-\frac{m\omega x^2}{2 \hbar}} H_n \left(\sqrt{\frac{m\omega}{\hbar}}x \right). $$ 
 
-The eigenvalues of the system are the allowed energies of the particle in the harmonic potential, while the eigenfunctions are the wave functions that describe the probability distribution of the particle in the harmonic potential.
+where $n$ is the quantum number that identifies the energy state of the system, $\hbar$ is the reduced Planck constant, $H_n(x)$ are the Hermite polynomials of degree $n$. The eigenvalues of the system are the allowed energies of the particle in the harmonic potential, and the eigenfunctions are the wave functions describing the probability distribution of the particle in the harmonic potential.
 
-The eigenvalues and eigenfunctions of the system are given by:
+The quantum harmonic oscillator has several applications in physics, particularly in quantum mechanics and quantum field theory. For example, it is used to describe the behavior of bound atoms and simple molecules, as well as to describe the behavior of subatomic particles such as electrons in a magnetic field. This is a very important mathematical model because it is one of the few quantum physical system models for which an exact analytical solution of the Schrödinger equation can be found. This makes the quantum harmonic oscillator one of the most studied models in quantum mechanics.
+.
 
-$$ E_n = \hbar \omega \left( n + \frac{1}{2} \right) $$
+The code solves the eigenvalue problem of the quantum harmonic oscillator $1D$, setting $\hbar = \omega = 1$ for simplicity. In order to solve the problem, the discretization solution is adopted: in theory, the space is continuous, consisting of an infinite number of points. Unfortunately, the reasoning cannot be applied at the practical level where we can only deal with a finite number of points. So we want to adopt a very small step $dx$ in order to approximate the continuous model as best as possible. The discretization yields a simpler tridiagonal Hamiltonian $H_{discr}$, where in the pricipal diagonal we find the terms $-2+V(x_i)$ and in the sub-diagonals we find $-1$.
 
-$$ \psi_n(x) = \frac{1}{\sqrt{2^n n!}} \left(\frac{m\omega}{\pi \hbar}\right)^{\frac{1}{4}} e^{-\frac{m\omega x^2}{2 \hbar}} H_n \left(\sqrt{\frac{m\omega}{\hbar}}x\right) $$
+The 'quantum_harmonic_oscillatori function takes as input the minimum and maximum value of the $x$-axis, the discretization step of the $dx$ grid, and the number of eigenvalues to be computed.
 
-where $n$ is the quantum number that identifies the energy state of the system, $\hbar$ is the reduced Planck constant, $H_n(x)$ are the Hermite polynomials of degree $n$, and $\omega$ is the angular frequency of the harmonic motion.
+First, the range of the $x$-axis, its mean value, and the number of steps within the range are calculated. Next, a matrix of the quantum harmonic oscillator potential and an associated diagonal matrix is created. The diagonal matrix consists of the sum of the potential and a constant. In addition, a subdiagonal to tridiagonal matrix with constant values is created, so that $H_{disc}$ is obtained. 
 
-In the code, we set $\hbar = \omega =  1$ and the solution of the eigenvalues is obtained through the numerical solution of the time-dependent Schrödinger equation, which is rewritten as a position-dependent eigenvalue problem. In particular, a reduced-banded symmetric tridiagonal matrix representing the harmonic potential is created, and the eigenvalues and eigenfunctions are calculated using the eigh_tridiagonal function of the scipy.linalg module. Finally, the graph of the eigenfunctions and eigenvalues of the system is displayed.
+The eigenvalue problem is solved using the 'eigh_tridiagonal' function of the 'scipy.linalg' package. This function returns the eigenvalues and eigenvectors of the tridiagonal matrix from its three diagonals.
 
-In summary, the code implements the numerical solution of the eigenvalue problem for the 1D quantum harmonic oscillator. The quantum harmonic oscillator is a quantum mechanical system that describes the behavior of a particle constrained by a harmonic potential, i.e., a particle subject to a force proportional to its distance from the equilibrium position. In particular, the quantum harmonic oscillator is a very important model in quantum mechanics because it provides an example of a many-body system that can be exactly solved and it also appears in many other physical contexts.
-
-The code implements the numerical algorithm to calculate the energies and wave functions of the 1D quantum harmonic oscillator. In particular, the code defines the system interval, step size, and the number of eigenvalues and eigenvectors to calculate. Subsequently, the code defines the potential energy matrix of the quantum harmonic oscillator and uses the eigh_tridiagonal function of the scipy.linalg module to solve the eigenvalue problem for the tridiagonal matrix associated with the potential energy matrix. Finally, the code displays the energies and wave functions of the 1D quantum harmonic oscillator.
+Finally, the 'print_results' function is used to print a table of the values of the expected eigenvalues, the calculated eigenvalues, and the percentage difference between the two. In addition, a graph is generated showing the eigenvalues and eigenvectors of the quantum harmonic oscillator.
 
 ### Usage
 The code can be run from the command line by executing the main() function. The user can adjust the following parameters:
